@@ -8,10 +8,7 @@ class Asignacion(Instruccion):
     def __init__(self,id,valor,linea,columna,parametro):
         self.linea = linea
         self.columna = columna
-        self.id = id
-        self.valor = valor
-        self.parametro = parametro
-        self.instruccionPrevia = None
+   
 
     def optmimizarCodigo(self):
         antes = self.generarAugus()
