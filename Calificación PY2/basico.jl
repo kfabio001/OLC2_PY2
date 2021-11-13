@@ -1,41 +1,44 @@
-val1 = 1::Int64;
-val2 = 10::Int64;
-val3 = 2021.2020::Float64;
+# Declaración de Variables
+var1 = 0::Int64;
+var2 = 0::Int64;
+var3 = 0::Int64;
 
-println("Probando declaracion de variables");
-println(val1, " ", val2, " ", val3);
-println("---------------------------------");
-# COMENTARIO DE UNA LINEA
-val1 = val1 + 41 - 123 * 4 / (2 + 2 * 2) - (10 + (125 % 5)) * 2 ^ 2;
-val2 = 11 * (11 % (12 + -10)) + 22 / 2;
-val3 = 2 ^ (2 * 12 / 6) + 25 / 5#= COMENTARIO
-MULTILINEA =#;
-println("Probando asignación de variables y aritmeticas");
-println(val1, " ", val2, " ", val3);
-println("---------------------------------");
+string1 = ""::String;
+string2 = ""::String;
 
-rel1 = (((val1 - val2) == 24) && (true && (false || 5 >= 5))) || ((7*7) != (15+555) || -61 > 51);
-rel2 = (7*7) <= (15+555) && 1 < 2;
-rel3 = ((0 == 0) != ((532 > 532)) == ("Hola" == "Hola")) && (false || (false == true));
-println("Probando relacionales y logicas");
-println(rel1, " ", rel2, " ", rel3);
-println("---------------------------------");
+bool1 = false::Bool;
+bool2 = false::Bool;
+bool3 = false::Bool;
 
-println("OPERACIONES " * "CON " * "Cadenas"^3);
-despedida = "Adios mundo :c";
-println(uppercase("Hola Mundo! ") * lowercase(despedida));
+# Println y Print
+println("Verificando valores variables");
+print(var1, " ", var2, " ", var3);
+println("");
+print(string1, " ", string2);
+println("");
+print(bool1, " ", bool2, " ", bool3);
+println("");
 
-println("Probando funciones nativas de JOLC");
-println("Funciones de operaciones aritmeticas");
-val3 = log10(1000) * log(2, 4);
-print("log10(1000) * log(2, 4): ");
-println(val3);
-println(sin(134), " ", cos(val1), " ", tan(12), " ", sqrt(100));
-println("Funciones relacionadas a conversiones");
-println(parse(Float64, "3.141516"), " ", parse(Int64, "45"));
-println(trunc(Int64, 35.156105)); 
-println(float(11));
-carnet = "201807394";
-println("Hola " * string(carnet));
-println(typeof(val1), " ", typeof(rel1));
-println("---------------------------------");
+# Asignación de Variables y Operaciones Arítmeticas, no potencia
+var1 = 41 + 150 - 22 * 12 / 3 + ((125 % 5) * (5 + 2 - (5 * 2)));
+var2 = (var1 + var1) - var1 * 2 + 11 % (12 + -10) + 125 / 25;
+
+# Asignación de Variables y Potencia
+var3 = (var1 ^ 0) + 125 - (var2) + (125 - 5^3);
+println(var1, " ", var2, " ", var3);
+
+# Asignación de Variables y Operaciones Relacionaless
+bool1 = ((var1 + 125 / 5 * 3 - 1) > ((var2 ^ 2) + (var3 - 125) * (125 - 5^3)));
+bool2 = ((var1 + 125 / 5 * 3 - 1) < ((var3 + 100 / 5) * (var2 - 10)));
+println(bool1, " ", bool2);
+
+# Asignación de Variables y Operaciones Lógicas (Corto Circuito)
+bool3 = (var1 >= 120 || var2 <= 10) && (var3 > 125 || var3 < 10) || (var1 == 120 && 120 != var2);
+println(bool3);
+bool3 = 100 == 100 && 100 != 100 || 100 == 100 && 100 == 100;
+println(bool3);
+
+string1 = "Hola";
+string2 = "Mundo";
+
+println(string1, " ", string2);

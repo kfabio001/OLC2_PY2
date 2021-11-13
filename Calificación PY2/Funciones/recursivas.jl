@@ -1,33 +1,40 @@
-function ackerman(m::Int64, n::Int64)
-    if m == 0
-        return n + 1;
-    elseif m > 0 && n == 0
-        return ackerman(m - 1, 1);
-    else
-        return ackerman(m - 1, ackerman(m, n - 1));
+# Serie de Fibonacci
+function sumarSerieFibonacciRecursiva(n::Int64)::Int64
+    if n > 0
+        return sumarSerieFibonacciRecursiva(n - 1) + SerieFibonacciRecursiva(n);
     end;
+    return 0;
 end;
 
-function hanoi(discos, origen, auxiliar, destino)
-    if discos == 1
-        println("Mover de ", origen, " a ", destino);
-    else
-        hanoi(discos - 1, origen, destino, auxiliar);
-        println("Mover de ", origen, " a ", destino);
-        hanoi(discos - 1, auxiliar, origen, destino);
-    end;
-end;
-
-function factorial(num::Int64)
-    if num == 1
+function SerieFibonacciRecursiva(n)::Int64
+    if (n == 0)
+        return 0;
+    elseif (n == 1)
         return 1;
     else
-        return num * factorial(num - 1);
+        return SerieFibonacciRecursiva(n - 1) + SerieFibonacciRecursiva(n - 2);
+    end;
+end
+
+println("Sumar serie de Fibonacci recursiva 10: ", sumarSerieFibonacciRecursiva(10));
+println("Sumar serie de Fibonacci recursiva 16: ", sumarSerieFibonacciRecursiva(16));
+println("Sumar serie de Fibonacci recursiva 7: ", sumarSerieFibonacciRecursiva(7));
+
+# Multiplicar impares
+function multiplicarImpares(n::Int64)::Int64
+    if (n == 0)
+        return 0;
+    elseif (n == 1)
+        return 1;
+    else
+        if (n % 2 == 0)
+            return multiplicarImpares(n - 1);
+        else
+            return multiplicarImpares(n - 2) * n;
+        end;
     end;
 end;
 
-println(factorial(5));
-
-println(ackerman(3, 4));
-
-hanoi(3, 1, 2, 3);
+println("Multiplicar impares hasta 12: ", multiplicarImpares(12));
+println("Multiplicar impares hasta 5: ", multiplicarImpares(5));
+println("Multiplicar impares hasta 21: ", multiplicarImpares(21));

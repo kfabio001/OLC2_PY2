@@ -1,121 +1,84 @@
-array = [32, 21, 7, 89, 56, 909, 109, 2];
-
-println("=======================================================================");
-println("==================================IF===================================");
-println("=======================================================================");
-
-if (array[4] > 50) 
-    println("IF CORRECTO");
-elseif (array[4] == 56) 
-    println("IF INCORRECTO");
-else
-    println("IF INCORRECTO");
+x = 1::Int64;
+y = 1::Int64;
+println("---------------------------------");
+println("Tablas de multiplicar con While");
+println("---------------------------------");
+while (x <= 10)
+    while (y <= 10)
+        print(x);
+        print("x");
+        print(y);
+        print("=");
+        println(x * y);
+         y = y + 1;
+    end;
+    println("-----------------------------");
+     x = x + 1;
+     y = 1;
 end;
 
-println("");
-println("=======================================================================");
-println("=============================IFs ANIDADOS==============================");
-println("=======================================================================");
-aux = 10;
-if aux > 0
-    println("PRIMER IF CORRECTO");
-    if true && (aux == 1)
-        println("SEGUNDO IF INCORRECTO");
-    elseif aux > 10
-        println("SEGUNDO IF INCORRECTO");
-    else
-        println("SEGUNDO IF CORRECTO");
+println("---------------------------------");
+println("  Tablas de multiplicar con For");
+println("---------------------------------");
+
+for i in 1:10
+    for j in 1:10
+        print(i);
+        print("x");
+        print(j);
+        print("=");
+        println(i * j);
     end;
-elseif aux <= 3
-    println("PRIMER IF INCORRECTO");
-    if true && (aux == 1)
-        println("SEGUNDO IF INCORRECTO");
-    elseif aux > 10
-        println("SEGUNDO IF INCORRECTO");
-    else
-        println("SEGUNDO IF CORRECTO");
-    end;
-elseif aux == array[4]
-    println("PRIMER IF INCORRECTO");
-    if true && (aux == 1)
-        println("SEGUNDO IF INCORRECTO");
-    elseif aux > 10
-        println("SEGUNDO IF INCORRECTO");
-    else
-        println("SEGUNDO IF CORRECTO");
-    end;
+    println("--------------------------");
 end;
 
-println("");
-println("=======================================================================");
-println("=================================WHILE=================================");
-println("=======================================================================");
+iteraciones = 10::Int64;
+temporal = 0::Int64;
 
-index = 0::Int64;
-
-while (index >= 0) 
-
-    if (index == 0) 
-         index = index + 100;
-    elseif (index > 50) 
-         index = index / 2 - 25;
-    else 
-         index = (index / 2) - 1;
-    end;
-
-    println(index);
-end;
-
-println("");
-println("=======================================================================");
-println("================================WHILE-2================================");
-println("=======================================================================");
-
-index = -2;
-index = index + 1;
-
-while (index != 12)
-     index = index + 1;
-    if (index == 0 || index == 1 || index == 11 || index == 12) 
-        println("*********************************************************************************************************");
-    elseif (index == 2) 
-        println("**********  ***************  ******                 ******                 ******              **********");
-    elseif (index >= 3 && index <= 5) 
-        println("**********  ***************  ******  *********************  *************  ******  **********************");
-    elseif (index == 6) 
-        println("**********  ***************  ******                 ******                 ******  **********************");
-    elseif (index >= 7 && index <= 9) 
-        println("**********  ***************  ********************   ******  *************  ******  **********************");
-    elseif (index == 10) 
-        println("**********                   ******                 ******  *************  ******              **********");
-    end;
-end;
-
-println("");
-println("=======================================================================");
-println("=============================TRANSFERENCIA=============================");
-println("=======================================================================");
-
-a = -1;
-while (a < 5)
-     a = a + 1;
-    if a == 3
-        print("a");
+while (temporal <= iteraciones)
+    numero = temporal::Int64;
+    if numero <= 0
+        print("Factorial de ");
+        print(temporal);
+        println(" = 0");
+        temporal = temporal + 1;
         continue;
-    elseif a == 4
-        println("b");
-        break;
     end;
-
-    print("El valor de a es: ", a, ", ");
+    factorial = 1::Int64;
+    while (numero > 1)
+        factorial = factorial * numero;
+        numero = numero - 1;
+    end;
+    print("Factorial de ");
+    print(temporal);
+    print(" = ");
+    println(factorial);
+    temporal = temporal + 1;
 end;
 
-println("Se debió imprimir");
 
-println("");
-println("=======================================================================");
-println("==================================FOR==================================");
-println("=======================================================================");
+#dias = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"]::Vector{String};
+
+#for i in dias
+       # if i == "Lunes"
+      #      println(1);
+     #   end;
+    #    if i == "Martes"
+       #     println(2);
+      #  end;
+     #   if i == "Miercoles"
+    #        println(3);
+   #     end;
+      #  if i == "Jueves"
+     #       println(4);
+       # end;
+      #  if i == "Viernes"
+     #       println(5);
+    #        println("Weekday");
+   #         break;
+  #      end;
+ #           println("Weekend");       
+#end;
 
 for i in 0:9
 
@@ -129,32 +92,4 @@ for i in 0:9
     end;
     println(output);
 
-end;
-
-println("");
-println("=======================================================================");
-println("=================================FOR-2=================================");
-println("=======================================================================");
-
-arr = [1,2,3,4,5,6];
-for i in [1,2,3,4,5,6]
-    println(arr[i] == 1, arr[i] == 2, arr[i] == 3, arr[i] == 4, arr[i] == 5, arr[i] == 6);
-end;
-
-println("");
-println("=======================================================================");
-println("=================================FOR-3=================================");
-println("=======================================================================");
-for e in [1,2,3,4,5,6]
-    if(length(arr) > e)
-        println(e*arr[e],e*arr[e],e*arr[e],e*arr[e],e*arr[e],e*arr[e]);
-    end;
-end;
-
-println("");
-println("=======================================================================");
-println("=================================FOR-4=================================");
-println("=======================================================================");
-for letra in "Calificacion de Intermedio"
-    println(letra);
 end;
